@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="dashboard3.css">
+    <title>Justice Dashboard</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="topbar">
+            <div class="logo">
+                <h2>Justice Panel</h2>
+            </div>
+            <div class="search">
+                <input type="text" name="search" placeholder="Search here">
+                <label for="search"><i class="fas fa-search"></i></label>
+            </div>
+            <i class="fas fa-bell"></i>
+            <div class="user">
+                <img src="data:image/png;base64,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 "alt=""width="20px" height="20px">
+            </div>
+        </div>
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-th-large"></i>
+                        <div>Dashboard</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-balance-scale"></i>
+                        <div>Cases</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-users"></i>
+                        <div>Lawyers</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-building"></i>
+                        <div>Courtrooms</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-gavel"></i>
+                        <div>Judges</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-chart-bar"></i>
+                        <div>Analytics</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-cog"></i>
+                        <div>Settings</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-question-circle"></i>
+                        <div>Help</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="cards">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">4250</div>
+                        <div class="card-name">Active Cases</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">75</div>
+                        <div class="card-name">Judges</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">500</div>
+                        <div class="card-name">Lawyers</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">32</div>
+                        <div class="card-name">Courtrooms</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-building"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="charts">
+                <div class="chart">
+                    <h2>Case Distribution (Current Year)</h2>
+                    <canvas id="lineChart"></canvas>
+                </div>
+                <div class="chart doughnut-chart">
+                    <h2>Case Categories</h2>
+                    <canvas id="doughnut"></canvas>
+                </div>
+            </div>
+            <div class="charts-container">
+                <div class="chart" id="age-wise-cases">
+                    <h2>Age-wise Pending Cases</h2>
+                    <canvas id="ageWisePendingCasesChart"></canvas>
+                </div>
+                <div class="chart" id="disposal">
+                    <h2>Disposal in Last Month</h2>
+                    <canvas id="disposalLastMonthChart"></canvas>
+                </div>
+                <div class="chart" id="women-cases">
+                    <h2>Cases Filed by Women</h2>
+                    <canvas id="casesFiledByWomenChart"></canvas>
+                </div>
+                <div class="chart" id="senior-citizens">
+                    <h2>Cases Filed by Senior Citizens</h2>
+                    <canvas id="casesFiledBySeniorCitizensChart"></canvas>
+                </div>
+                
+                <div class="chart" id="contested-uncontested">
+                    <h2>Contested vs Uncontested Cases</h2>
+                    <canvas id="contestedUncontestedChart"></canvas>
+                </div>
+                <div class="chart" id="listed-today">
+                    <h2>Cases Listed Today</h2>
+                    <canvas id="casesListedTodayChart"></canvas>
+                </div>
+                <div class="container">
+                    <h2>Case List</h2>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Case Number</th>
+                                    <th>Case Type</th>
+                                    <th>Status</th>
+                                    <th>Filed Date</th>
+                                    <th>Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1234</td>
+                                    <td>Civil</td>
+                                    <td>Pending</td>
+                                    <td>2023-06-21</td>
+                                    <td><a href="#">Case Details...</a></td>
+                                </tr>
+                                <tr>
+                                    <td>5678</td>
+                                    <td>Criminal</td>
+                                    <td>Resolved</td>
+                                    <td>2023-05-14</td>
+                                    <td><a href="#">Case Details...</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="pagination">
+                        <span>Showing 1 to 2 of 2 entries</span>
+                        <div class="pagination-controls">
+                            <button>Previous</button>
+                            <button>1</button>
+                            <button>Next</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <script src="dashboard3.js"></script>
+    <script>
+        const toggleBtn = document.getElementById('toggle-btn');
+const sidebar = document.getElementById('sidebar');
+const closeBtn = document.getElementById('close-btn');
+
+toggleBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+});
+
+closeBtn.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+});
+
+    </script>
+</body>
+
+</html>

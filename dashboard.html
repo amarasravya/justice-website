@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Management Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h2, h3 {
+            color: #333;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .add-button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .status {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Case Management Dashboard</h2>
+
+<!-- Overview Section -->
+<div class="container">
+    <h3>Overview</h3>
+    <p>Total Cases: <span id="totalCases">0</span></p>
+    <p>Pending Cases: <span id="pendingCases">0</span></p>
+    <p>In Progress Cases: <span id="inProgressCases">0</span></p>
+    <p>Resolved Cases: <span id="resolvedCases">0</span></p>
+</div>
+
+<!-- Case Management -->
+<div class="container">
+    <h3>Manage Cases</h3>
+    <form id="caseForm">
+        <label for="caseName">Case Name:</label>
+        <input type="text" id="caseName" name="caseName" required><br><br>
+
+        <label for="caseDescription">Case Description:</label><br>
+        <textarea id="caseDescription" name="caseDescription" rows="4" required></textarea><br><br>
+
+        <label for="caseStatus">Status:</label>
+        <select id="caseStatus" name="caseStatus">
+            <option value="Pending">Pending</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Resolved">Resolved</option>
+        </select><br><br>
+
+        <button type="submit" class="add-button">Add Case</button>
+    </form>
+
+    <h4>Your Cases</h4>
+    <table id="caseTable">
+        <thead>
+            <tr>
+                <th>Case Name</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="caseList"></tbody>
+    </table>
+</div>
+
+<!-- Activity Log -->
+<div class="container">
+    <h3>Activity Log</h3>
+    <form id="activityForm">
+        <label for="activityDescription">Activity Description:</label>
+        <input type="text" id="activityDescription" name="activityDescription" required><br><br>
+
+        <label for="activityDate">Date:</label>
+        <input type="date" id="activityDate" name="activityDate" required><br><br>
+
+        <button type="submit" class="add-button">Add Activity</button>
+    </form>
+
+    <h4>Your Activities</h4>
+    <table id="activityTable">
+        <thead>
+            <tr>
+                <th>Activity Description</th>
+                <th>Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="activityList"></tbody>
+    </table>
+</div>
+
+<script>
+    let totalCases = 0;
+    let pendingCases = 0;
+    let inProgressCases = 0;
+    let resolvedCases = 0;
+
+    // Case Management
+    document.getElementById('caseForm').onsubmit = function(event) {
+        event.preventDefault();
+        const caseName = document.getElementById('caseName').value;
+        const caseDescription = document.getElementById('caseDescription').value;
+        const caseStatus = document.getElementById('caseStatus').value;
+
+        addCaseToDashboard(caseName, caseDescription, caseStatus);
+
+        // Clear the form
+        document.getElementById('caseForm').reset();
+    };
+
+    function addCaseToDashboard(name, description, status) {
+        const caseList = document.getElementById('caseList');
+        
+        const caseItem = document.createElement('tr');
+        caseItem.innerHTML = `
+            <td>${name}</td>
+            <td>${description}</td>
+            <td class="status">${status}</td>
+            <td><button class="remove-button" onclick="removeCase(this)">Remove</button></td>
+        `;
+        
+        caseList.appendChild(caseItem);
+        updateCaseCount(status, 1);
+    }
+
+    function removeCase(button) {
+        const caseItem = button.parentElement.parentElement;
+        const status = caseItem.querySelector('.status').textContent;
+        caseItem.remove();
+        updateCaseCount(status, -1);
+    }
+
+    function updateCaseCount(status, change) {
+        totalCases += change;
+        if (status === 'Pending') pendingCases += change;
+        if (status === 'In Progress') inProgressCases += change;
+        if (status === 'Resolved') resolvedCases += change;
+
+        document.getElementById('totalCases').textContent = totalCases;
+        document.getElementById('pendingCases').textContent = pendingCases;
+        document.getElementById('inProgressCases').textContent = inProgressCases;
+        document.getElementById('resolvedCases').textContent = resolvedCases;
+    }
+
+    // Activity Log Management
+    document.getElementById('activityForm').onsubmit = function(event) {
+        event.preventDefault();
+        const activityDescription = document.getElementById('activityDescription').value;
+        const activityDate = document.getElementById('activityDate').value;
+
+        addActivityToLog(activityDescription, activityDate);
+
+        // Clear the form
+        document.getElementById('activityForm').reset();
+    };
+
+    function addActivityToLog(description, date) {
+        const activityList = document.getElementById('activityList');
+
+        const activityItem = document.createElement('tr');
+        activityItem.innerHTML = `
+            <td>${description}</td>
+            <td>${date}</td>
+            <td><button class="remove-button" onclick="removeActivity(this)">Remove</button></td>
+        `;
+        
+        activityList.appendChild(activityItem);
+    }
+
+    function removeActivity(button) {
+        const activityItem = button.parentElement.parentElement;
+        activityItem.remove();
+    }
+</script>
+
+</body>
+</html>

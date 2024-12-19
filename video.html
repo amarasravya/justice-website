@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="video.css">
+    <title>Online Oath Recording</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Online Oath Recording</h1>
+        <video id="video" width="640" height="480" autoplay muted></video>
+        <div class="controls">
+            <button id="startRecord">Start Recording</button>
+            <button id="stopRecord" disabled>Stop Recording</button>
+        </div>
+        <h2>Oath Text</h2>
+        <p id="oathText">I, [Your Name], do solemnly swear that I will support and defend the Constitution of the United States against all enemies, foreign and domestic...</p>
+        <button id="submitOath">Submit Oath</button>
+        <div id="responseMessage"></div>
+    </div>
+
+    <script src="video.js"></script>
+</body>
+</html>

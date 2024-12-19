@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Submission of Vakalat</title>
+    <link rel="stylesheet" href="submission.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Online Submission of Vakalat</h1>
+        <form id="vakalatForm">
+            <div class="form-group">
+                <label for="lawyer-name">Lawyer's Name:</label>
+                <input type="text" id="lawyer-name" name="lawyer_name" required>
+                <small class="error-message" id="lawyerNameError"></small>
+            </div>
+            
+            <div class="form-group">
+                <label for="client-name">Client's Name:</label>
+                <input type="text" id="client-name" name="client_name" required>
+                <small class="error-message" id="clientNameError"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="case-number">Case Number:</label>
+                <input type="text" id="case-number" name="case_number" required>
+                <small class="error-message" id="caseNumberError"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="vakalat-file">Upload Vakalat Document:</label>
+                <input type="file" id="vakalat-file" name="vakalat_file" accept=".pdf,.doc,.docx" required>
+                <small class="error-message" id="fileError"></small>
+            </div>
+
+            <button type="button" class="submit-btn" onclick="submitForm()">Submit Vakalat</button>
+        </form>
+        <div id="form-status"></div>
+    </div>
+
+    <script src="submission.js"></script>
+</body>
+</html>

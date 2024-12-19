@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.login-container {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 14px;
+    margin-top: 10px;
+    display: block;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.user-roles label {
+    margin-right: 15px;
+    font-size: 14px;
+}
+
+.warning {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.show-password {
+    margin-top: 10px;
+}
+
+.captcha-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.captcha-code {
+    font-size: 18px;
+    background-color: #f1f1f1;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+.captcha-audio,
+.captcha-refresh {
+    background-color: #ccc;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.captcha-input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button-container {
+    text-align: center;
+}
+
+.login-btn,
+.reset-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.login-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.reset-btn {
+    background-color: #6c757d;
+    color: white;
+}
+
+.register {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register a:hover {
+    text-decoration: underline;
+}

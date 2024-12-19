@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Advanced Justice Dashboard">
+    <title>Justice Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Justice Dashboard</h1>
+        </header>
+        
+        <div class="main-content">
+            <aside class="sidebar">
+                <ul>
+                    <li><a href="#age-wise-cases">Age-wise Pending Cases</a></li>
+                    <li><a href="#disposal">Disposal in Last Month</a></li>
+                    <li><a href="#women-cases">Cases Filed by Women</a></li>
+                    <li><a href="#senior-citizens">Cases Filed by Senior Citizens</a></li>
+                    <li><a href="#contested-uncontested">Contested vs Uncontested Cases</a></li>
+                    <li><a href="#listed-today">Cases Listed Today</a></li>
+                </ul>
+            </aside>
+            <div class="charts-container">
+                <div class="chart" id="age-wise-cases">
+                    <h2>Age-wise Pending Cases</h2>
+                    <canvas id="ageWisePendingCasesChart"></canvas>
+                </div>
+
+                <div class="chart" id="disposal">
+                    <h2>Disposal in Last Month</h2>
+                    <canvas id="disposalLastMonthChart"></canvas>
+                </div>
+
+                <div class="chart" id="women-cases">
+                    <h2>Cases Filed by Women</h2>
+                    <canvas id="casesFiledByWomenChart"></canvas>
+                </div>
+
+                <div class="chart" id="senior-citizens">
+                    <h2>Cases Filed by Senior Citizens</h2>
+                    <canvas id="casesFiledBySeniorCitizensChart"></canvas>
+                </div>
+
+                <div class="chart" id="contested-uncontested">
+                    <h2>Contested vs Uncontested Cases</h2>
+                    <canvas id="contestedUncontestedChart"></canvas>
+                </div>
+
+                <div class="chart" id="listed-today">
+                    <h2>Cases Listed Today</h2>
+                    <canvas id="casesListedTodayChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

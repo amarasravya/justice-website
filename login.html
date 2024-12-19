@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In Form</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login-container">
+        <form action="c:\users\amara\onedrive\desktop\xampp server\htdocs\test.php" method="">
+        <h2>Sign In</h2>
+
+        <!-- State Selection -->
+        <label for="state">Select State</label>
+        <select id="state" name="state">
+            <option value="">Select State</option>
+            <option value="state1">Andhra Pradesh</option>
+            <option value="state2">Arunachal Pradesh</option>
+            <option value="state3">Assam</option>
+            <option value="state4">Bihar</option>
+            <option value="state5">Chhattisgarh</option>
+            <option value="state6">Goa</option>
+            <option value="state7">Gujarat</option>
+            <option value="state8">Haryana</option>
+            <option value="state9">Himachal Pradesh</option>
+            <option value="state10">Jharkhand</option>
+            <option value="state11">Karnataka</option>
+            <option value="state12">Kerala</option>
+            <option value="state13">Maharashtra</option>
+            <option value="state14">Madhya Pradesh</option>
+            <option value="state15">Manipur</option>
+            <option value="state16">Meghalaya</option>
+            <option value="state17">Mizoram</option>
+            <option value="state18">Nagaland</option>
+            <option value="state19">Odisha</option>
+            <option value="state20">Punjab</option>
+            <option value="state21">Rajasthan</option>
+            <option value="state22">Sikkim</option>
+            <option value="state23">Tamil Nadu</option>
+            <option value="state24">Tripura</option>
+            <option value="state25">Telangana</option>
+            <option value="state26">Uttar Pradesh</option>
+            <option value="state27">Uttarakhand</option>
+            <option value="state28">West Bengal</option>
+        </select>
+
+        <!-- User Role Selection -->
+        <div class="user-roles">
+            <label><input type="radio" name="role" value="advocate"> Advocate</label>
+            <label><input type="radio" name="role" value="litigant"> Litigant</label>
+            <label><input type="radio" name="role" value="govt_pleader"> Govt. Pleader</label>
+            <label><input type="radio" name="role" value="clerk"> Clerk</label>
+        </div>
+
+        <!-- Username and Password -->
+        <label for="username">Username (Username is not case sensitive)</label>
+        <input type="text" id="username" name="username" placeholder="Bar Code/Email/Mobile/Unique Code">
+
+        <label for="password">Password (Password is case sensitive)</label>
+        <input type="password" id="password" name="password" placeholder="Enter Password">
+        <div class="show-password">
+            <label>
+                <input type="checkbox" id="showPassword"> Show Password
+            </label>
+        </div>
+
+        <!-- Notice -->
+        <p class="warning">Dear user, if you are not able to login then please clear your browser cache or open site in incognito mode of browser.</p>
+
+        <!-- Captcha Section -->
+        <div class="captcha-container">
+            <span class="captcha-code">ndtck</span>
+            <button type="button"captcha-audio" style="background-color: white;" type="">🔊</button>
+            <button type="reset" class="captcha-refresh">🔄</button>
+            <input type="text" class="captcha-input" placeholder="Enter Captcha">
+        </div>
+
+        <!-- Login and Reset Buttons -->
+        <div class="button-container">
+            <button type="submit"class="login-btn" id="loginButton" name="save">Login</button>
+            <button type="reset" class="reset-btn" id="resetButton">Reset</button>
+        </div>
+
+        <!-- Registration Link -->
+        <p class="register">New User? <a href="register.html">Register here</a></p>
+    </div>
+        </form>
+
+    <!-- JavaScript Section -->
+    <script>
+        // Function to handle the login button click event
+        document.getElementById('loginButton').addEventListener('click', function () {
+            // Capture the input values
+            const state = document.getElementById('state').value;
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Check if any field is empty
+            if (state === "" || username === "" || password === "") {
+                alert("Please fill in all fields before logging in.");
+            } else {
+                alert("Login Successfully!");
+            }
+        });
+
+        // Function to handle the reset button click event
+        document.getElementById('resetButton').addEventListener('click', function () {
+            document.getElementById('state').value = "";
+            document.getElementById('username').value = "";
+            document.getElementById('password').value = "";
+            document.querySelector('input[name="role"]:checked').checked = false; // Uncheck any selected role
+        });
+
+        // Function to show/hide password
+        document.getElementById('showPassword').addEventListener('click', function () {
+            const passwordField = document.getElementById('password');
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
+            }
+        });
+    </script>
+</body>
+</html>

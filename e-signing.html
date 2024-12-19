@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Signing Portal</title>
+    <link rel="stylesheet" href="e-signing.css">
+    <script src="e-signing.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Document e-Signing Portal</h1>
+        
+        <!-- Document Upload Section -->
+        <div class="upload-section">
+            
+            <h3>Upload Document for Signing</h3>
+            <input type="file"  title="document" id="document-upload" accept=".pdf,.docx" />
+            
+        </div>
+        
+        <!-- Signers Details Section -->
+        <div class="signers-section">
+            <h3>Signers Information</h3>
+            <div id="signers-container">
+                <!-- Dynamic input fields for multiple signers will be added here -->
+            </div>
+            <button onclick="addSigner()">Add Signer</button>
+        </div>
+        
+        <!-- Submit Button -->
+        <div class="submit-section">
+            <button id="submit-button" onclick="submitForSigning()">Submit for Signing</button>
+        </div>
+
+        <!-- Status Message -->
+        <div id="status-message"></div>
+    </div>
+</body>
+</html>

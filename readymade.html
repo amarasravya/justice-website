@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Pleading Template</title>
+    <link rel="stylesheet" href="readymade.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Editable Legal Pleading Template</h1>
+
+        <!-- Form Section -->
+        <form id="pleadingForm">
+            <label for="partyName">Party Name:</label>
+            <input type="text" id="partyName" placeholder="Enter Party Name" required>
+
+            <label for="caseNumber">Case Number:</label>
+            <input type="text" id="caseNumber" placeholder="Enter Case Number" required>
+
+            <label for="courtName">Court Name:</label>
+            <input type="text" id="courtName" placeholder="Enter Court Name" required>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" required>
+
+            <label for="pleadingContent">Pleading Content:</label>
+            <textarea id="pleadingContent" placeholder="Enter the pleading content here" required></textarea>
+
+            <button type="button" onclick="generatePleading()">Generate Pleading</button>
+            <button type="button" onclick="submitPleading()">Submit Pleading</button>
+        </form>
+
+        <!-- Preview Section -->
+        <div class="preview-section">
+            <h2>Pleading Preview</h2>
+            <div id="pleadingPreview"></div>
+            <button onclick="downloadPleading()">Download as Document</button>
+        </div>
+    </div>
+
+    <script src="readymade.js"></script>
+</body>
+</html>

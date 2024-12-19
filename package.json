@@ -1,0 +1,17 @@
+{
+    "name": "my_app",
+    "version": "1.0.0",
+    "description": "Node.js app with MySQL integration",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "body-parser": "^1.20.3",
+        "cors": "^2.8.5",
+        "express": "^4.21.0",
+        "mysql": "^2.18.1",
+        "mysql2": "^2.3.0"
+    }
+}

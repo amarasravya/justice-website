@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Filing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .case-form {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        .remove-button {
+            color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h2>File Applications for Different Cases</h2>
+<form id="applicationForm">
+    <div id="caseFormsContainer"></div>
+    <button type="button" onclick="addCaseForm()">Add Case</button>
+    <button type="submit">Submit All Applications</button>
+</form>
+
+<script>
+    let caseIndex = 0;
+
+    function addCaseForm() {
+        caseIndex++;
+        const caseFormsContainer = document.getElementById('caseFormsContainer');
+        const caseForm = document.createElement('div');
+        caseForm.className = 'case-form';
+        caseForm.innerHTML = `
+            <h3>Case ${caseIndex}</h3>
+            <label for="caseType${caseIndex}">Case Type:</label>
+            <input type="text" id="caseType${caseIndex}" name="caseType${caseIndex}" required><br><br>
+
+            <label for="caseDetails${caseIndex}">Case Details:</label><br>
+            <textarea id="caseDetails${caseIndex}" name="caseDetails${caseIndex}" rows="4" required></textarea><br><br>
+
+            <span class="remove-button" onclick="removeCaseForm(this)">Remove Case</span>
+            <hr>
+        `;
+        caseFormsContainer.appendChild(caseForm);
+    }
+
+    function removeCaseForm(button) {
+        const caseForm = button.parentElement;
+        caseForm.remove();
+    }
+
+    document.getElementById('applicationForm').onsubmit = function(event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        const data = {};
+        
+        // Collecting data for each case
+        for (let [key, value] of formData.entries()) {
+            data[key] = value;
+        }
+
+        // Displaying the collected data (for demonstration)
+        console.log(data);
+        
+        // Here you would typically send the data to the server using fetch/AJAX
+        // fetch('/submit-applications', {
+        //     method: 'POST',
+        //     body: JSON.stringify(data),
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     }
+        // });
+    };
+</script>
+
+</body>
+</html>

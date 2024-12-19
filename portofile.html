@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h2 {
+            color: #333;
+        }
+        .portfolio-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .case-item {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .remove-button {
+            color: red;
+            cursor: pointer;
+        }
+        .add-case-button {
+            margin-top: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Portfolio Management</h2>
+<div class="portfolio-container">
+    <form id="caseForm">
+        <label for="caseName">Case Name:</label>
+        <input type="text" id="caseName" name="caseName" required><br><br>
+
+        <label for="caseDescription">Case Description:</label><br>
+        <textarea id="caseDescription" name="caseDescription" rows="4" required></textarea><br><br>
+
+        <button type="submit" class="add-case-button">Add Case</button>
+    </form>
+
+    <h3>Your Cases</h3>
+    <div id="caseList"></div>
+</div>
+
+<script>
+    document.getElementById('caseForm').onsubmit = function(event) {
+        event.preventDefault();
+        const caseName = document.getElementById('caseName').value;
+        const caseDescription = document.getElementById('caseDescription').value;
+
+        addCaseToPortfolio(caseName, caseDescription);
+
+        // Clear the form
+        document.getElementById('caseForm').reset();
+    };
+
+    function addCaseToPortfolio(name, description) {
+        const caseList = document.getElementById('caseList');
+        
+        const caseItem = document.createElement('div');
+        caseItem.className = 'case-item';
+        caseItem.innerHTML = `
+            <h4>${name}</h4>
+            <p>${description}</p>
+            <span class="remove-button" onclick="removeCase(this)">Remove Case</span>
+        `;
+        
+        caseList.appendChild(caseItem);
+    }
+
+    function removeCase(button) {
+        const caseItem = button.parentElement;
+        caseItem.remove();
+    }
+</script>
+
+</body>
+</html>

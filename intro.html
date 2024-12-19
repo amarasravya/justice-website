@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Justice Report provides insights on social justice, legal reforms, and related news.">
+    <title>Justice Report in Society</title>
+    <style>
+        /* Reset some default styles */
+body, h1, h2, h3, p, ul, li, form, input, button, textarea {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+header {
+    background-color: #004080;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+header h1 {
+    font-size: 1.5em;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.hero-section {
+    background: url('./justice.jpg');
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.cta-button {
+    background-color: #ff5722;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+    position: relative;
+    top: 60px;
+}
+
+.cta-button:hover {
+    background-color: #e64a19;
+}
+
+.reports-section, .news-section, .about-section, .contact-section {
+    padding: 60px 20px;
+    background-color: white;
+    margin: 10px;
+    bottom: 20px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #004080;
+}
+
+.reports-container, .news-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.report-card, .news-item {
+    background-color: #e3e4e8;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    flex: 1 1 30%;
+    max-width: 30%;
+    transition: transform 0.3s;
+}
+
+.report-card:hover, .news-item:hover {
+    transform: translateY(-5px);
+}
+
+.report-card h3, .news-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.report-card p, .news-item p {
+    font-size: 1em;
+    color: #555;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 15px;
+    color: #ff5722;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.read-more:hover {
+    color: #e64a19;
+}
+
+.about-section p {
+    font-size: 1.1em;
+    line-height: 1.6em;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contact-section {
+    background-color: #f4f4f4;
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#contact-form input, #contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+
+#contact-form button {
+    background-color: #004080;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#contact-form button:hover {
+    background-color: #003366;
+}
+
+footer {
+    background-color: #004080;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer .social-media {
+    margin-top: 10px;
+}
+
+footer .social-media a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+footer .social-media img {
+    width: 24px;
+    height: 24px;
+}
+
+.heading-content{
+    position: relative;
+    bottom: 90px;
+}
+
+.para-content{
+    position: relative;
+    bottom: 110px;
+    color: #004080
+}
+
+
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Justice Logo" >
+            <a href="login.html"><h1 style="color:white">Justice Report</h1></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#reports">Reports</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="law.html">Chatbot</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h2 class="heading-content">Promoting Justice and Fairness in Society</h2>
+            <p class="para-content">Explore our comprehensive reports on justice and social equality.</p>
+            <a href="#reports" class="cta-button">View Reports</a>
+        </div>
+    </section>
+
+    <!-- Reports Section -->
+    <section id="reports" class="reports-section">
+        <h2>Latest Reports</h2>
+        <div class="reports-container">
+            <div class="report-card">
+                <h3>Justice in Education</h3>
+                <p>Analyzing the state of justice in educational institutions.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+            <div class="report-card">
+                <h3>Criminal Justice Reform</h3>
+                <p>An in-depth look at the reforms needed in the criminal justice system.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+            <div class="report-card">
+                <h3>Economic Justice</h3>
+                <p>Exploring the impact of economic policies on social justice.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="news-section">
+        <h2>Latest News</h2>
+        <div class="news-container">
+            <article class="news-item">
+                <h3>Supreme Court Ruling on Social Justice</h3>
+                <p>The Supreme Court has issued a landmark ruling on social justice issues.</p>
+                <a href="#" class="read-more">Read More</a>
+            </article>
+            <article class="news-item">
+                <h3>New Legislation on Criminal Justice</h3>
+                <p>Recent legislation aims to overhaul the criminal justice system.</p>
+                <a href="#" class="read-more">Read More</a>
+            </article>
+            <article class="news-item">
+                <h3>Education Policy Changes</h3>
+                <p>New education policies have been introduced to promote equality.</p>
+                <a href="#" class="read-more">Read More</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <h2>About Us</h2>
+        <p>We are committed to promoting justice and fairness in society. Our mission is to provide comprehensive reports, news, and resources on social justice issues.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Justice Report. All rights reserved.</p>
+        <div class="social-media">
+            <a href="#"><img src="facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="linkedin.png" alt="LinkedIn"></a>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    // Scroll to sections smoothly
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Contact Form Submission
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        alert('Thank you for contacting us! We will get back to you soon.');
+        form.reset();
+    });
+});
+
+    </script>
+</body>
+
+</html>

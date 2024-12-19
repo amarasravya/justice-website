@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Payment - Court Fee</title>
+    <link rel="stylesheet" href="onlinepay.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Online Payment - Court Fee</h1>
+
+        <!-- Navigation Tabs -->
+        <div class="tab-section">
+            <input type="radio" id="courtFee" name="paymentType" checked>
+            <label for="courtFee">Court Fee</label>
+
+            <input type="radio" id="judicialDeposit" name="paymentType">
+            <label for="judicialDeposit">Judicial Deposit</label>
+
+            <input type="radio" id="fine" name="paymentType">
+            <label for="fine">Fine</label>
+
+            <input type="radio" id="penalty" name="paymentType">
+            <label for="penalty">Penalty</label>
+
+            <input type="radio" id="others" name="paymentType">
+            <label for="others">Others</label>
+        </div>
+
+        <!-- Form Section -->
+        <div class="form-section">
+            <form id="paymentForm">
+                <h3>New Case or Existing Case</h3>
+                <input type="radio" id="districtCourt" name="courtType" checked>
+                <label for="districtCourt">District Court</label>
+
+                <input type="radio" id="highCourt" name="courtType">
+                <label for="highCourt">High Court</label>
+
+                <br><br>
+                <input type="radio" id="newCase" name="caseType" checked>
+                <label for="newCase">New Case</label>
+
+                <input type="radio" id="existingCase" name="caseType">
+                <label for="existingCase">Existing Case</label>
+
+                <!-- State Dropdown -->
+                <label for="state">State:</label>
+                <select id="state" required>
+                    <option value="" disabled selected>Select State</option>
+                    <option value="state1">State 1</option>
+                    <option value="state2">State 2</option>
+                </select>
+
+                <!-- District Dropdown -->
+                <label for="district">District:</label>
+                <select id="district" required>
+                    <option value="" disabled selected>Select District</option>
+                    <option value="district1">District 1</option>
+                    <option value="district2">District 2</option>
+                </select>
+
+                <!-- Establishment Dropdown -->
+                <label for="establishment">Establishment:</label>
+                <select id="establishment" required>
+                    <option value="" disabled selected>Select Establishment</option>
+                    <option value="establishment1">Establishment 1</option>
+                    <option value="establishment2">Establishment 2</option>
+                </select>
+
+                <!-- Party Name -->
+                <label for="partyName">Party Name:</label>
+                <input type="text" id="partyName" placeholder="Party Name" required>
+
+                <!-- Court Fee -->
+                <label for="courtFeeAmount">Court Fee (INR):</label>
+                <input type="number" id="courtFeeAmount" placeholder="Amount" required>
+
+                <!-- Remark -->
+                <label for="remark">Remark:</label>
+                <textarea id="remark" placeholder="Remark"></textarea>
+                <p class="note">Special characters are not allowed in Remark</p>
+
+                <!-- Mobile Number -->
+                <label for="mobileNumber">Mobile Number:</label>
+                <input type="tel" id="mobileNumber" placeholder="Enter Mobile No" required pattern="[0-9]{10}">
+
+                <!-- Terms and Conditions -->
+                <div class="terms-section">
+                    <textarea readonly title="online pay">The website pay.ecourts.gov.in is designed and developed by National Informatics Centre under the eCourts project.</textarea>
+                    <label>
+                        <input type="checkbox" id="termsCheckbox" required> I agree to above Terms and Conditions
+                    </label>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" onclick="validatePaymentForm(event)">Submit Payment</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="onlinepay.js"></script>
+</body>
+</html>
